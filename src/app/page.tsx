@@ -10,6 +10,7 @@ import { OptimizedStarField } from '@/components/three/OptimizedStarField'
 import StarField2D from '@/components/effects/StarField2D'
 import LightNebula2D from '@/components/effects/LightNebula2D'
 import MeteorShower2D from '@/components/effects/MeteorShower2D'
+import ShootingStars2D from '@/components/effects/ShootingStars2D'
 import Navigation from '@/components/Navigation'
 import PerformanceMonitor from '@/components/debug/PerformanceMonitor'
 import { useResponsive } from '@/components/providers/ResponsiveProvider'
@@ -39,6 +40,7 @@ function HomePage() {
         <StarField2D />
         <LightNebula2D />
         <MeteorShower2D />
+        <ShootingStars2D />
       </div>
 
       {/* Content sections */}

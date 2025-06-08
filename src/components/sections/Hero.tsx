@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
             className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-4"
             variants={itemVariants}
           >
-            <span className="text-gradient">hmziqrs</span>
+            <span className="text-gradient">huzidev</span>
           </motion.h1>
         </motion.div>
 
@@ -64,16 +64,7 @@ const Hero: React.FC = () => {
           className="text-xl md:text-2xl lg:text-3xl text-gray-400 mb-8 font-light tracking-wide"
           variants={itemVariants}
         >
-          Senior Software Engineer
-        </motion.p>
-
-        {/* Subtitle */}
-        <motion.p
-          className="text-lg md:text-xl text-gray-500 mb-12 max-w-2xl mx-auto leading-relaxed"
-          variants={itemVariants}
-        >
-          Crafting exceptional digital experiences with{' '}
-          <span className="text-gray-300">9 years</span> of full-stack expertise
+          Software Engineer
         </motion.p>
       </motion.div>
     </section>

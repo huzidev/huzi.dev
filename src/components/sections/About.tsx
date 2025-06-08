@@ -30,7 +30,10 @@ const About: React.FC = () => {
   }
 
   return (
-    <section id="about" className="relative min-h-screen flex items-center justify-center px-6 py-20">
+    <section
+      id="about"
+      className="relative min-h-screen flex items-center justify-center px-6 py-20"
+    >
       <motion.div
         className="max-w-4xl mx-auto text-center"
         variants={containerVariants}
@@ -46,33 +49,26 @@ const About: React.FC = () => {
         </motion.h2>
 
         <motion.div className="space-y-8 text-lg md:text-xl leading-relaxed">
-          <motion.p
-            className="text-gray-300"
-            variants={itemVariants}
-          >
-            I&apos;m a passionate software engineer who thrives on solving complex problems 
-            and building scalable solutions. With a decade of experience spanning 
-            frontend, backend, and cross-platform development.
+          <motion.p className="text-gray-300" variants={itemVariants}>
+            I'm a dedicated full-stack software engineer with 2 years of
+            hands-on experience building and scaling modern web applications. I
+            enjoy leading projects, collaborating with teams, and delivering
+            impactful solutions that make a difference.
           </motion.p>
 
-          <motion.p
-            className="text-gray-400"
-            variants={itemVariants}
-          >
-            My expertise lies in creating performant applications using modern 
-            technologies like <span className="text-white">TypeScript</span>, 
-            <span className="text-white"> React</span>, 
-            <span className="text-white"> Next.js</span>, and 
-            <span className="text-white"> Rust</span>. I believe in writing 
-            clean, maintainable code that stands the test of time.
+          <motion.p className="text-gray-300" variants={itemVariants}>
+            I've successfully led 4+ full-cycle projects, mastering technologies
+            such as <span className="text-white">TypeScript</span>,{" "}
+            <span className="text-white">RemixJS</span>,{" "}
+            <span className="text-white">Next.js</span>, and{" "}
+            <span className="text-white">Node.js</span>
           </motion.p>
 
-          <motion.p
-            className="text-gray-500"
-            variants={itemVariants}
-          >
-            When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
-            contributing to open source, or sharing knowledge with the developer community.
+          <motion.p className="text-gray-300" variants={itemVariants}>
+            Currently pursuing my university degree, I constantly seek
+            opportunities to learn, grow, and contribute to real-world
+            applications. Beyond coding, I enjoy exploring emerging technologies
+            and sharing insights with the developer community.
           </motion.p>
         </motion.div>
 
@@ -82,21 +78,21 @@ const About: React.FC = () => {
           variants={itemVariants}
         >
           <div className="text-center">
-            <div className="text-4xl font-bold text-white mb-2">9+</div>
+            <div className="text-4xl font-bold text-white mb-2">2+</div>
             <div className="text-gray-400">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-white mb-2">50+</div>
-            <div className="text-gray-400">Projects Delivered</div>
+            <div className="text-4xl font-bold text-white mb-2">4+</div>
+            <div className="text-gray-400">Projects Led</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-white mb-2">5</div>
-            <div className="text-gray-400">Tech Stacks Mastered</div>
+            <div className="text-4xl font-bold text-white mb-2">4</div>
+            <div className="text-gray-400">Core Tech Stacks Mastered</div>
           </div>
         </motion.div>
       </motion.div>
     </section>
-  )
+  );
 }
 
 export default About
