@@ -66,7 +66,7 @@ const Skills: React.FC = () => {
       opacity: 1,
       transition: {
         duration: prefersReducedMotion ? 0 : 0.8,
-        staggerChildren: prefersReducedMotion ? 0 : 0.2,
+        staggerChildren: prefersReducedMotion ? 0 : 0.09,
       },
     },
   }
@@ -131,7 +131,8 @@ const Skills: React.FC = () => {
             "TypeScript",
             "RemixJS",
             "NextJS",
-            "React",
+            "ReactJS",
+            "React Native",
             "AdonisJS",
             "NodeJS",
             "ExpressJS",
@@ -146,8 +147,7 @@ const Skills: React.FC = () => {
             "MongoDB",
             "MySQL",
             "PostgreSQL",
-            "Git",
-            "GitHub",
+            "Stripe"
           ].map((skill, index) => (
             <motion.div
               key={skill}

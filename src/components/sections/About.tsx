@@ -82,8 +82,8 @@ const About: React.FC = () => {
             <div className="text-gray-400">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-white mb-2">4+</div>
-            <div className="text-gray-400">Projects Led</div>
+            <div className="text-4xl font-bold text-white mb-2">20+</div>
+            <div className="text-gray-400">Projects Delivered</div>
           </div>
           <div className="text-center">
             <div className="text-4xl font-bold text-white mb-2">4</div>

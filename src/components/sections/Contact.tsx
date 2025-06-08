@@ -13,23 +13,23 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     name: "GitHub",
-    url: "https://github.com/hmziqrs",
-    username: "@hmziqrs",
-    description: "Open source contributions & projects"
+    url: "https://github.com/huzidev",
+    username: "@huzidev",
+    description: "Full-stack software engineer",
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/hmziqrs",
-    username: "hmziqrs",
-    description: "Professional network & experience"
+    url: "https://linkedin.com/in/huzidev",
+    username: "huzidev",
+    description: "Professional networking",
   },
   {
     name: "Email",
-    url: "mailto:hello@hmziq.rs",
-    username: "hello@hmziq.rs",
-    description: "Direct communication"
-  }
-]
+    url: "mailto:huzaifa.iqdev@gmail.com",
+    username: "huzaifa.iqdev@gmail.com",
+    description: "Direct communication",
+  },
+];
 
 const Contact: React.FC = () => {
   const prefersReducedMotion = useReducedMotion()
@@ -115,27 +115,6 @@ const Contact: React.FC = () => {
               </div>
             </motion.a>
           ))}
-        </motion.div>
-
-        {/* Footer */}
-        <motion.div
-          className="border-t border-gray-800 pt-8"
-          variants={itemVariants}
-        >
-          <p className="text-gray-600 text-sm">
-            © 2025 hmziqrs. Crafted with passion and attention to detail.
-          </p>
-          
-          {/* Scroll to top */}
-          <motion.button
-            onClick={() => {
-              window.scrollTo({ top: 0, behavior: 'smooth' })
-            }}
-            className="mt-6 text-gray-500 hover:text-white transition-colors duration-300 text-sm tracking-widest"
-            whileHover={{ scale: prefersReducedMotion ? 1 : 1.1 }}
-          >
-            ↑ BACK TO TOP
-          </motion.button>
         </motion.div>
       </motion.div>
     </section>
