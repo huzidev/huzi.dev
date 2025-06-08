@@ -1,80 +1,72 @@
-'use client';
+'use client'
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useScrollProgress } from '@/hooks/useScrollProgress'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
-const Navigation = () => {
-  const [activeSection, setActiveSection] = useState('info');
-  const [isVisible, setIsVisible] = useState(false);
+const navItems = [
+  { name: 'Home', href: '#hero' },
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Contact', href: '#contact' },
+]
 
-  const navItems = [
-    { id: 'info', label: 'Info', icon: '👋' },
-    { id: 'about', label: 'About', icon: '👨‍💻' },
-    { id: 'expertise', label: 'Skills', icon: '🚀' },
-    { id: 'connect', label: 'Connect', icon: '📫' },
-  ];
+export default function Navigation() {
+  const [isVisible, setIsVisible] = useState(false)
+  const { scrollProgress } = useScrollProgress()
+  const prefersReducedMotion = useReducedMotion()
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
-
-      // Show/hide navigation based on scroll
-      setIsVisible(window.scrollY > 100);
-
-      // Determine active section
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = sections[i];
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(navItems[i].id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [navItems]);
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      setIsVisible(window.scrollY > 100)
     }
-  };
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
-    <nav 
-      className={`fixed top-1/2 right-8 transform -translate-y-1/2 z-50 transition-all duration-300 ${
-        isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
-      }`}
-    >
-      <div className="backdrop-blur-sm bg-black/30 rounded-2xl border border-white/20 p-2">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`group flex items-center w-full p-3 mb-2 last:mb-0 rounded-xl transition-all duration-300 ${
-              activeSection === item.id
-                ? 'bg-gradient-to-r from-blue-500/30 to-purple-500/30 border border-blue-400/30'
-                : 'hover:bg-white/10'
-            }`}
-            title={item.label}
-          >
-            <span className="text-xl mr-3">{item.icon}</span>
-            <span 
-              className={`text-sm font-medium transition-all duration-300 ${
-                activeSection === item.id ? 'text-white' : 'text-gray-400 group-hover:text-white'
-              }`}
-            >
-              {item.label}
-            </span>
-          </button>
-        ))}
-      </div>
-    </nav>
-  );
-};
+    <AnimatePresence>
+      {isVisible && (
+        <motion.nav
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.3 }}
+          className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50"
+        >
+          <div className="bg-dark-200/80 backdrop-blur-md border border-gray-800 rounded-full px-6 py-3">
+            <div className="flex space-x-6">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-gray-400 hover:text-white transition-colors duration-200 text-sm font-medium"
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
 
-export default Navigation;
+          {/* Progress bar */}
+          <motion.div
+            className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-star-blue to-star-purple rounded-full"
+            style={{ 
+              width: `${scrollProgress * 100}%`,
+              originX: 0
+            }}
+          />
+        </motion.nav>
+      )}
+    </AnimatePresence>
+  )
+}

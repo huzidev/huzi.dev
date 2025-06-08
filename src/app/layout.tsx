@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { PerformanceProvider } from "@/components/providers/PerformanceProvider";
+import { ResponsiveProvider } from "@/components/providers/ResponsiveProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name - Full Stack Developer",
-  description: "Modern CV Portfolio - Passionate developer crafting digital experiences with cutting-edge technologies",
+  title: "hmziqrs - Senior Software Engineer",
+  description: "Modern CV Portfolio - Passionate developer crafting digital experiences with 9 years of full-stack expertise",
 };
 
 export default function RootLayout({
@@ -27,7 +29,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <PerformanceProvider>
+          <ResponsiveProvider>
+            {children}
+          </ResponsiveProvider>
+        </PerformanceProvider>
       </body>
     </html>
   );
