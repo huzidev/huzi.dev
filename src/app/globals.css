@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -12,15 +12,82 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Meteor Shower Animations */
+@keyframes meteor {
+  0% {
+    transform: translateY(-100vh) translateX(-50px) rotate(45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(50px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateY(-100vh) translateX(-100px) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) translateX(100px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.meteor {
+  background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+  animation: meteor linear infinite;
+  border-radius: 2px;
+}
+
+.shooting-star {
+  background: linear-gradient(45deg, transparent 0%, rgba(59, 130, 246, 0.9) 30%, rgba(147, 51, 234, 0.9) 70%, transparent 100%);
+  animation: shooting-star linear infinite;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 35, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
 }
