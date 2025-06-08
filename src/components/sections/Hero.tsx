@@ -49,7 +49,6 @@ const Hero: React.FC = () => {
         initial="hidden"
         animate="visible"
       >
-        {/* Name */}
         <motion.div variants={floatingVariants} initial="initial" animate="animate">
           <motion.h1
             className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-4"
@@ -59,12 +58,18 @@ const Hero: React.FC = () => {
           </motion.h1>
         </motion.div>
 
-        {/* Tagline */}
         <motion.p
           className="text-xl md:text-2xl lg:text-3xl text-gray-400 mb-8 font-light tracking-wide"
           variants={itemVariants}
         >
           Software Engineer
+        </motion.p>
+
+        <motion.p
+          className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-light leading-relaxed"
+          variants={itemVariants}
+        >
+          A passionate full-stack software developer with over 2+ years of experience and problem solver
         </motion.p>
       </motion.div>
     </section>
