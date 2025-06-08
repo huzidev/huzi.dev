@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "hmziqrs - Senior Software Engineer",
-  description: "Modern CV Portfolio - Passionate developer crafting digital experiences with 9 years of full-stack expertise",
+  title: "huzidev - Software Engineer",
+  description: "Modern CV Portfolio - Passionate full-stack developer with a focus on performance, user experience, and clean code.",
 };
 
 export default function RootLayout({
