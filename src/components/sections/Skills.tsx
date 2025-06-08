@@ -101,7 +101,7 @@ const Skills: React.FC = () => {
       className="relative min-h-screen flex items-center justify-center px-6 py-20"
     >
       <motion.div
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl flex-col items-center justify-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -115,7 +115,7 @@ const Skills: React.FC = () => {
         </motion.h2>
 
         <motion.p
-          className="text-center text-gray-400 text-lg max-w-3xl mx-auto mb-12"
+          className="text-center text-gray-300 text-lg max-w-3xl mx-auto mb-12"
           variants={cardVariants}
         >
           These are the technologies and tools I’ve mastered and regularly use
@@ -163,7 +163,7 @@ const Skills: React.FC = () => {
         </motion.div>
 
         <motion.div className="text-center mt-20" variants={cardVariants}>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-500 text-lg">
             Always learning, always improving — I aim to stay current and build
             with best practices in every stack I work with.
           </p>
